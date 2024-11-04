@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import EventCard from '@/components/EventCard.vue'
+import EventDetails from '@/components/EventDetails.vue'
 import type { Event } from '@/type'
 import { ref, onMounted } from 'vue'
 import EventService from '@/services/EventService'
@@ -20,6 +21,7 @@ onMounted(() => {
   <!-- new element -->
   <div class="events">
     <EventCard v-for="event in events" :key="event.id" :event="event" />
+    <EventDetails v-for="event in events" :key="event.id" :event="event" />
   </div>
 </template>
 <style scoped>
